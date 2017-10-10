@@ -12,6 +12,8 @@ class ContactDetailController: UITableViewController {
     
     var contact: Contact?
     
+    @IBOutlet weak var contactName: UILabel!
+    @IBOutlet weak var contactImage: UIImageView!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var streetLabel: UILabel!
@@ -23,7 +25,6 @@ class ContactDetailController: UITableViewController {
         super.viewDidLoad()
         configureView()
 
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,12 +36,15 @@ class ContactDetailController: UITableViewController {
         guard let contact = contact else {
             return
         }
+        contactImage.image = contact.image
+        contactName.text = contact.lastName + " "+contact.firstName
         phoneNumberLabel.text = contact.phone
         emailLabel.text = contact.email
         streetLabel.text = contact.street
         cityLabel.text = contact.city
         stateLabel.text = contact.state
         zipLabel.text = contact.zip
+        
         
     }
 
