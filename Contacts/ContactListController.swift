@@ -15,6 +15,7 @@ class ContactListController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    
 
         
     }
@@ -42,6 +43,22 @@ class ContactListController: UITableViewController {
         cell.detailTextLabel?.text = contact.lastName
         
         return cell
+    }
+    
+    // MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "showContact" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let contact = contacts[indexPath.row]
+                
+                guard let navigationController = segue.destination as? UINavigationController, let contactDetailController = navigationController.topViewController as? ContactDetailController
+                    else { return }
+                
+                contactDetailController.contact = contact
+            }
+        }
     }
 
 }
