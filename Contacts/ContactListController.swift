@@ -9,6 +9,9 @@
 import UIKit
 
 class ContactListController: UITableViewController {
+    
+    //getting some data
+    var contacts = ContactsSource.contacts
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,16 +24,16 @@ class ContactListController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
+    // MARK: Data Source
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
-
+    
+    // MARK: 
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return contacts.count
     }
 
 }
