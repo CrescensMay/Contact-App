@@ -106,15 +106,15 @@
 			isa = PBXGroup;
 			children = (
 				04094F0C1F8CF14000DD63ED /* AppDelegate.swift */,
+				04094F421F8CFCB300DD63ED /* ContactListController.swift */,
+				04094F441F8CFD0600DD63ED /* ContactDetailController.swift */,
+				04094F3E1F8CF82B00DD63ED /* PListLoader.swift */,
+				04094F401F8CF91000DD63ED /* Contact.swift */,
 				04094F121F8CF14000DD63ED /* Main.storyboard */,
 				04094F151F8CF14100DD63ED /* Assets.xcassets */,
 				04094F171F8CF14100DD63ED /* LaunchScreen.storyboard */,
 				04094F1A1F8CF14100DD63ED /* Info.plist */,
 				04094F3C1F8CF78700DD63ED /* ContactsDB.plist */,
-				04094F3E1F8CF82B00DD63ED /* PListLoader.swift */,
-				04094F401F8CF91000DD63ED /* Contact.swift */,
-				04094F421F8CFCB300DD63ED /* ContactListController.swift */,
-				04094F441F8CFD0600DD63ED /* ContactDetailController.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
