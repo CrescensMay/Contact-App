@@ -57,7 +57,7 @@ class ContactDetailController: UITableViewController {
             return
         }
         delegate?.didMarkAsFavoriteContact(contact)
+        
     }
-
 
 }
