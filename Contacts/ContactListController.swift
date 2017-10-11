@@ -38,11 +38,11 @@ extension ContactsSource {
 
 class ContactListController: UITableViewController {
     
-   var sections = ContactsSource.sectionContacts
-   let sectionTitles = ContactsSource.sortedUniqueFirstLetter
+    let dataSource = ContactsDataSource(sectionedData: ContactsSource.sectionContacts, sectionTitles: ContactsSource.sortedUniqueFirstLetter)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = dataSource
     
 
         
@@ -51,43 +51,6 @@ class ContactListController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: Data Source
-    
-    //for giving section title indice
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionTitles[section]
-    }
-    
-    // display alphabetic letters
-    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return sectionTitles
-    }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sections[section].count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let Contactcell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath) as? ContactCell else {
-            fatalError()
-        }
-        let contact = sections[indexPath.section][indexPath.row]
-//        let contact = contacts[indexPath.row]
-        Contactcell.profileImageView.image = contact.image
-        Contactcell.nameLabel.text = "\(contact.firstName) \(contact.lastName)"
-        Contactcell.cityLabel.text = contact.city
-        
-        if contact.favorite {
-            Contactcell.favoriteIcon.image = #imageLiteral(resourceName: "Star")
-        }
-        
-        return Contactcell
     }
     
     // MARK: Table View Delegate
@@ -102,7 +65,7 @@ class ContactListController: UITableViewController {
         
         if segue.identifier == "showContact" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let contact = sections[indexPath.section][indexPath.row]
+                let contact = dataSource.object(at: indexPath)
 //                let contact = contacts[indexPath.row]
                 
                 guard let navigationController = segue.destination as? UINavigationController, let contactDetailController = navigationController.topViewController as? ContactDetailController
@@ -123,21 +86,15 @@ extension Contact: Equatable {
 
 extension ContactListController: contactDetailControllerDelegate {
     func didMarkAsFavoriteContact(_ contact: Contact) {
-        var outerIndex: Array.Index? = nil
-        var innerIndex: Array.Index? = nil
-        for (index, contacts) in sections.enumerated() {
-            if let indexOfContact = contacts.index(of: contact){
-                outerIndex = index
-                innerIndex = indexOfContact
-                break
-            }
+        guard let indexPath = dataSource.indexPath(for: contact) else {
+            return
         }
-        if let outerIndex = outerIndex, let innerIndex = innerIndex {
-            var favoriteContact = sections[outerIndex][innerIndex]
-            favoriteContact.favorite = true
-            sections[outerIndex][innerIndex] = favoriteContact
-            
-            tableView.reloadData()
+        var favoriteContact =  dataSource.object(at: indexPath)
+        favoriteContact.favorite = true
+        
+        dataSource.updateContact(favoriteContact, at: indexPath)
+        
+        tableView.reloadData()
         }
-    }
+    
 }

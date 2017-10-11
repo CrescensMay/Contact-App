@@ -19,6 +19,7 @@
 		04094F431F8CFCB300DD63ED /* ContactListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04094F421F8CFCB300DD63ED /* ContactListController.swift */; };
 		04094F451F8CFD0600DD63ED /* ContactDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04094F441F8CFD0600DD63ED /* ContactDetailController.swift */; };
 		04094F491F8D2B8900DD63ED /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04094F481F8D2B8900DD63ED /* ContactCell.swift */; };
+		04BCBC031F8E51E7001B7FBC /* ContactsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BCBC021F8E51E7001B7FBC /* ContactsDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		04094F421F8CFCB300DD63ED /* ContactListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListController.swift; sourceTree = "<group>"; };
 		04094F441F8CFD0600DD63ED /* ContactDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailController.swift; sourceTree = "<group>"; };
 		04094F481F8D2B8900DD63ED /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		04BCBC021F8E51E7001B7FBC /* ContactsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				04094F3E1F8CF82B00DD63ED /* PListLoader.swift */,
 				04094F401F8CF91000DD63ED /* Contact.swift */,
 				04094F481F8D2B8900DD63ED /* ContactCell.swift */,
+				04BCBC021F8E51E7001B7FBC /* ContactsDataSource.swift */,
 				04094F121F8CF14000DD63ED /* Main.storyboard */,
 				04094F151F8CF14100DD63ED /* Assets.xcassets */,
 				04094F171F8CF14100DD63ED /* LaunchScreen.storyboard */,
@@ -278,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04BCBC031F8E51E7001B7FBC /* ContactsDataSource.swift in Sources */,
 				04094F491F8D2B8900DD63ED /* ContactCell.swift in Sources */,
 				04094F411F8CF91000DD63ED /* Contact.swift in Sources */,
 				04094F451F8CFD0600DD63ED /* ContactDetailController.swift in Sources */,
@@ -536,6 +540,7 @@
 				04094F351F8CF14100DD63ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04094F361F8CF14100DD63ED /* Build configuration list for PBXNativeTarget "ContactsTests" */ = {
 			isa = XCConfigurationList;
@@ -544,6 +549,7 @@
 				04094F381F8CF14100DD63ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04094F391F8CF14100DD63ED /* Build configuration list for PBXNativeTarget "ContactsUITests" */ = {
 			isa = XCConfigurationList;
@@ -552,6 +558,7 @@
 				04094F3B1F8CF14100DD63ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
