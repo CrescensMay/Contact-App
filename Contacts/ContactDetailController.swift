@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol contactDetailControllerDelegate: class {
+    func didMarkAsFavoriteContact(_ contact: Contact)
+}
+
 class ContactDetailController: UITableViewController {
     
     var contact: Contact?
+    weak var delegate: contactDetailControllerDelegate?
     
     @IBOutlet weak var contactName: UILabel!
     @IBOutlet weak var contactImage: UIImageView!
@@ -46,6 +51,12 @@ class ContactDetailController: UITableViewController {
         zipLabel.text = contact.zip
         
         
+    }
+    @IBAction func markAsFavorite(_ sender: Any) {
+        guard let contact = contact else {
+            return
+        }
+        delegate?.didMarkAsFavoriteContact(contact)
     }
 
 

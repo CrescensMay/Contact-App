@@ -173,7 +173,7 @@
                                         <rect key="frame" x="0.0" y="200" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QKv-h7-hlE" id="ib9-vO-AKV">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bi-oI-Pts">
@@ -201,7 +201,7 @@
                                         <rect key="frame" x="0.0" y="244" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kdF-Kn-TB2" id="oBi-P4-WRa">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f95-rx-DBD">
@@ -233,7 +233,7 @@
                                         <rect key="frame" x="0.0" y="324" width="375" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZQv-nQ-aif" id="51m-FF-iGp">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iC-pe-NV1">
@@ -278,6 +278,31 @@
                                                 <constraint firstItem="gwj-y5-gew" firstAttribute="top" secondItem="bHc-S1-iYY" secondAttribute="top" id="cOV-X2-04v"/>
                                                 <constraint firstItem="gwj-y5-gew" firstAttribute="leading" secondItem="jIe-Z8-kRK" secondAttribute="trailing" constant="8" id="n4w-sg-tjs"/>
                                                 <constraint firstItem="6iC-pe-NV1" firstAttribute="top" secondItem="51m-FF-iGp" secondAttribute="topMargin" constant="8" id="p9v-tb-XT5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="sP4-qb-bXo">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="JLf-Z3-13i">
+                                        <rect key="frame" x="0.0" y="448" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JLf-Z3-13i" id="j1T-U7-phm">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wU-pM-4TG">
+                                                    <rect key="frame" x="8" y="7" width="110" height="30"/>
+                                                    <state key="normal" title="Mark as favorite"/>
+                                                    <connections>
+                                                        <action selector="markAsFavorite:" destination="TV8-Mk-gXW" eventType="touchUpInside" id="FzZ-Mg-wNx"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8wU-pM-4TG" firstAttribute="leading" secondItem="j1T-U7-phm" secondAttribute="leading" constant="8" id="QF5-n5-1WQ"/>
+                                                <constraint firstItem="8wU-pM-4TG" firstAttribute="centerY" secondItem="j1T-U7-phm" secondAttribute="centerY" id="opv-da-Jnu"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
