@@ -109,8 +109,35 @@ class ContactListController: UITableViewController {
                     else { return }
                 
                 contactDetailController.contact = contact
+                contactDetailController.delegate = self
             }
         }
     }
 
+}
+extension Contact: Equatable {
+    static func ==(lhs: Contact, rhs: Contact) -> Bool {
+        return lhs.firstName == rhs.firstName && lhs.lastName == rhs.lastName && lhs.street == rhs.street && lhs.city == rhs.city && lhs.state == rhs.state && lhs.zip == rhs.zip && lhs.phone == rhs.phone && lhs.email == rhs.email
+    }
+}
+
+extension ContactListController: contactDetailControllerDelegate {
+    func didMarkAsFavoriteContact(_ contact: Contact) {
+        var outerIndex: Array.Index? = nil
+        var innerIndex: Array.Index? = nil
+        for (index, contacts) in sections.enumerated() {
+            if let indexOfContact = contacts.index(of: contact){
+                outerIndex = index
+                innerIndex = indexOfContact
+                break
+            }
+        }
+        if let outerIndex = outerIndex, let innerIndex = innerIndex {
+            var favoriteContact = sections[outerIndex][innerIndex]
+            favoriteContact.favorite = true
+            sections[outerIndex][innerIndex] = favoriteContact
+            
+            tableView.reloadData()
+        }
+    }
 }
